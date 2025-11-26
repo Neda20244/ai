@@ -10,7 +10,7 @@ Route::get('/generate/loading', function (Request $request) {
     $job_id = $request->query('job_id'); 
     return view('loading', compact('job_id'));
 })->name('generate.loading');
-Route::get('/generate', [GenerateController::class, 'index'])->name('generate.form');
+Route::get('/', [GenerateController::class, 'index'])->name('generate.form');
 Route::post('/generate', [GenerateController::class, 'generate'])->name('generate.submit');
 Route::get('/generated-posts', [GenerateController::class, 'showPosts'])->name('generated.posts');
 
